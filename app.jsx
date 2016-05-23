@@ -1,5 +1,6 @@
 var React = require('react');
 var Navbar = require('./navbar.jsx');
+var Modal = require('./modal.jsx');
 
 var Notification = React.createClass({
   getInitialState: function() {
@@ -119,6 +120,7 @@ var App = React.createClass({
       <div className="app">
         <Navbar />
         <NotificationList />
+        <Modal />
       </div>
     );
   }
