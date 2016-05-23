@@ -10963,7 +10963,7 @@
 	          _react2.default.createElement(
 	            "a",
 	            { className: "navbar-brand", href: "#" },
-	            "Brand"
+	            _react2.default.createElement("img", { alt: "SQS Monitor", width: "20", height: "20", src: "./codebananalogo.png" })
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -10984,11 +10984,11 @@
 	          ),
 	          _react2.default.createElement(
 	            "form",
-	            { className: "navbar-form navbar-left", role: "search" },
+	            { className: "navbar-form navbar-left", role: "filter" },
 	            _react2.default.createElement(
 	              "div",
 	              { className: "form-group" },
-	              _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Search" })
+	              _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "filter" })
 	            )
 	          ),
 	          _react2.default.createElement(
