@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="dist/aws-sdk.min.js"></script>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/bootstrap-theme.min.css">
+    <script src="dist/js/jquery-1.11.3.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    /*
+      color palette from http://www.colourlovers.com/palette/27905/threadless
+    */
+      .notification-list li {
+        list-style: none;
+        background: #F26C4F;
+        color: #fff;
+        height: 0;
+        line-height: 2em;
+        margin: 0;
+        padding: 0 0.5em;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .notification-list li.show {
+        height: 2em;
+        margin: 2px 0;
+        width: 100%;
+      }
+
+      .slide-fade li {
+        transition: all 0.4s ease-out;
+        opacity: 0;
+      }
+      .slide-fade li.show {
+        opacity: 1;
+      }
+
+      .navbar-default {
+        border: none;
+        background-color: #1B325F;
+        background-image: none;
+      }
+
+      .navbar-default .navbar-brand {
+        color: white;
+      }
+
+      .navbar-default .navbar-nav>li>a {
+        color: white;
+      }
+
+      @media (max-width: 767px) {
+        .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+          color: white;
+        }
+      }
+
+      .app {
+        height: 100vh;
+      }
+
+/*      .slide-fade {
+        background-color: white;
+      }*/
+
+      ul.notification-list {
+        padding: 0;
+      }
+
+      body {
+        background-color: #E9F2F9;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
