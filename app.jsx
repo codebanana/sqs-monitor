@@ -76,7 +76,7 @@ var NotificationList = React.createClass({
       })
     })
 
-    setInterval(this.getMessageFromSQS, 3000);
+    // setInterval(this.getMessageFromSQS, 3000);
   },
 
   handleClick: function() {
@@ -95,15 +95,21 @@ var NotificationList = React.createClass({
   },
 
   render: function() {
+    var filterText = this.props.filterText;
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-4 slide-fade">
             <button onClick={this.handleClick}>button!</button>
             <ul className="notification-list">
-              {this.state.notifications.map(function(listValue){
-                return <Notification content={listValue.message} />;
-              })}
+              {
+                this.state.notifications.filter(function(listValue){
+                  console.log(filterText+':'+listValue.queueName)
+                  return listValue.queueName.indexOf(filterText)>-1;
+                }).map(function(listValue){
+                  return <Notification content={listValue.message} />;
+                })
+              }
             </ul>
           </div>
           <div className="col-md-8 slide-fade">
@@ -115,11 +121,28 @@ var NotificationList = React.createClass({
 })
 
 var App = React.createClass({
+  getInitialState: function(){
+    return {
+      filterText: '',
+    };
+  },
+
+  handleUserInput: function(filterText){
+    this.setState({
+      filterText: filterText
+    });
+  },
+
   render: function(){
     return (
       <div className="app">
-        <Navbar />
-        <NotificationList />
+        <Navbar 
+          filterText={this.state.filterText}
+          onUserInput={this.handleUserInput}
+        />
+        <NotificationList 
+          filterText={this.state.filterText}
+        />
         <Modal />
       </div>
     );

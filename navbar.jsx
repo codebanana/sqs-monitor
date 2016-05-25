@@ -1,6 +1,12 @@
 import React from 'react';
 
 var Navbar = React.createClass({
+  handleChange(event) {
+    this.props.onUserInput(
+      event.target.value
+    );
+  },
+
   render() {
     return (
       <nav className="navbar navbar-default">
@@ -23,7 +29,13 @@ var Navbar = React.createClass({
             </ul>
             <form className="navbar-form navbar-left" role="filter">
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="filter"></input>
+                <input 
+                  type="text" 
+                  className="form-control" 
+                  placeholder="filter"
+                  value={this.props.filterText} 
+                  onChange={this.handleChange}
+                ></input>
               </div>
             </form>
             <ul className="nav navbar-nav navbar-right">
